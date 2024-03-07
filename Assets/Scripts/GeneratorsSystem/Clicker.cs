@@ -27,6 +27,6 @@ public class Clicker : MonoBehaviour
 
     private void ClickerMethod()
     {
-        _resourceBank.Money++;
+        _moneyPub++;
     }
 }
