@@ -32,7 +32,6 @@ public class Generator1 : MonoBehaviour
     {
         if (_resourceBank.Money >= _gen1Cost && _isBought == false)
         {
-            Debug.Log("Bought!");
             _isBought = true;
             StartCoroutine(Income());
             _resourceBank.Money -= _gen1Cost;
