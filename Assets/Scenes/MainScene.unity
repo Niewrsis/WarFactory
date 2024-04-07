@@ -2049,6 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clickerField: {fileID: 2069012970}
   _moneyView: {fileID: 352117523}
+  _generator1: {fileID: 2009068341}
 --- !u!4 &228101182
 Transform:
   m_ObjectHideFlags: 0
@@ -11534,7 +11535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1453017954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16124,6 +16125,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007382416}
   m_CullTransparentMesh: 1
+--- !u!1 &2009068340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009068342}
+  - component: {fileID: 2009068341}
+  m_Layer: 0
+  m_Name: Generators Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009068341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009068340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9bc0aaaa790f04eb7fc9635248b755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buyingGen1: {fileID: 506134938}
+  _buyingGen1Interval: {fileID: 626926297}
+  _gen1Cost: 200
+  _gen1Income: 1
+  _gen1Interval: 1
+  _gen1IntervalCost: 200
+  _gen1IntervalMinus: 0.05
+--- !u!4 &2009068342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009068340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.619236, y: 23.823858, z: 170.50497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2012373236
 GameObject:
   m_ObjectHideFlags: 0
@@ -16472,7 +16524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04fdc85a88474848b3e591914a2fb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moneyPub: 0
   _clickerZone: {fileID: 1850646654}
 --- !u!1 &2070691927
 GameObject:
@@ -16980,6 +17031,7 @@ SceneRoots:
   - {fileID: 319859122}
   - {fileID: 624941952}
   - {fileID: 2069012969}
+  - {fileID: 2009068342}
   - {fileID: 352117524}
   - {fileID: 228101182}
   - {fileID: 233669378}
