@@ -4,6 +4,7 @@ using UnityEngine;
 public class MoneyView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _moneyField;
+    [SerializeField] private TextMeshProUGUI _moneyFieldTree;
     private ResourceBank _resourceBank;
 
     public void Initialize(ResourceBank resourceBank)
@@ -14,5 +15,6 @@ public class MoneyView : MonoBehaviour
     void Update()
     {
         _moneyField.text = StringNumbersFormatter.FormatNumber(_resourceBank.Money);
+        _moneyFieldTree.text = StringNumbersFormatter.FormatNumber(_resourceBank.Money);
     }
 }

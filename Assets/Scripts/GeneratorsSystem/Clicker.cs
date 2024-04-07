@@ -20,13 +20,13 @@ public class Clicker : MonoBehaviour
             _resourceBank.Money = _moneyPub;
         }
     }
-    public void Initialize(ResourceBank resourceBank)
-    {
-        _resourceBank = resourceBank;
-    }
 
     private void ClickerMethod()
     {
         _moneyPub++;
+    }
+    public void Initialize(ResourceBank resourceBank)
+    {
+        _resourceBank = resourceBank;
     }
 }
