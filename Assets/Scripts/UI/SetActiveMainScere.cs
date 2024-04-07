@@ -8,5 +8,6 @@ public class SetActiveMainScere : MonoBehaviour
     private void Awake()
     {
         _skilTreeScren.SetActive(false);
+        _mainScreen.SetActive(true);
     }
 }
