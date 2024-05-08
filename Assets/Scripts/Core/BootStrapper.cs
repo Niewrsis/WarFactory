@@ -8,7 +8,7 @@ namespace Core
 
         private void Awake()
         {
-            ResourceBank resourceBank = new ResourceBank(0);
+            ResourceBank resourceBank = new ResourceBank(0, 1);
             _clickerField.Initialize(resourceBank);
             _moneyView.Initialize(resourceBank);
         }
