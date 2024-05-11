@@ -449,6 +449,9 @@ MonoBehaviour:
   _upgradeButton: {fileID: 1659668735}
   _costText: {fileID: 1654291914}
   _clickPowerText: {fileID: 1829528702}
+  _clickPower: 1
+  _upgradeCost: 10
+  _upgradePercent: 0.2
 --- !u!4 &505910936
 Transform:
   m_ObjectHideFlags: 0
