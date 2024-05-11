@@ -13,9 +13,10 @@ public class Floor1 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _clickPowerText;
 
     private float _money;
-    private float _clickPower = 1;
-    private float _upgradeCost = 10;
     private int _multiplier;
+    [SerializeField] private float _clickPower = 1;
+    [SerializeField] private float _upgradeCost = 10;
+    [SerializeField] private float _upgradePercent = .2f;
 
     private void Start()
     {
@@ -38,7 +39,7 @@ public class Floor1 : MonoBehaviour
         if (_money >= _upgradeCost)
         {
             _resourceBank.Money -= _upgradeCost;
-            _upgradeCost += _upgradeCost * (float).2;
+            _upgradeCost += _upgradeCost * _upgradePercent;
             _costText.text = $"{Math.Round(_upgradeCost, 1)}$";
             _clickPower += 1;
             _clickPowerText.text = $"{_clickPower}$";
