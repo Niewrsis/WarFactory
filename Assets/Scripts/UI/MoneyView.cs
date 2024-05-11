@@ -13,6 +13,6 @@ public class MoneyView : MonoBehaviour
 
     void Update()
     {
-        _moneyField.text = StringNumbersFormatter.FormatNumber(_resourceBank.Money);
+        _moneyField.text = StringNumbersFormatter.FormatNumber(_resourceBank.Money) + "$";
     }
 }
