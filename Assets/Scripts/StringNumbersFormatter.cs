@@ -1,7 +1,7 @@
 using System;
-public static class StringNumbersFormatter
+public static class Formatter
 {
-    public static string FormatNumber(float value)
+    public static string FormatNumberToString(float value)
     {
         if (value >= Math.Pow(10, 12))
             return (value / Math.Pow(10, 12)).ToString("0.#") + "T+";
