@@ -9,7 +9,12 @@ public class FloorsChanging : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _floorsText;
 
     private int _floorsIndex = 0;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) & _floorsIndex != _floors.Length - 1) ChangeUp();
+        if (Input.GetKeyDown(KeyCode.DownArrow) & _floorsIndex != 0) ChangeDown();
 
+    }
     public void ChangeUp()
     {
         _floors[_floorsIndex].SetActive(false);
