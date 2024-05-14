@@ -8,6 +8,7 @@ namespace Core
         [SerializeField] private Floor3 _floor3;
         [SerializeField] private Floor4 _floor4;
         [SerializeField] private Floor5 _floor5;
+        [SerializeField] private FloorsChanging _floorSystem;
         [SerializeField] private MoneyView _moneyView;
 
         private void Awake()
@@ -18,6 +19,7 @@ namespace Core
             _floor3.Initialize(resourceBank);
             _floor4.Initialize(resourceBank);
             _floor5.Initialize(resourceBank);
+            _floorSystem.Initialize(resourceBank);
             _moneyView.Initialize(resourceBank);
         }
     }
