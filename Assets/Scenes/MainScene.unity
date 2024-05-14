@@ -2537,27 +2537,31 @@ MonoBehaviour:
   - {fileID: 1536284576}
   - {fileID: 1131057542}
   _floorsText: {fileID: 16755996}
-  _locked:
-  - {fileID: 1834732232}
-  - {fileID: 372271197}
-  - {fileID: 518417595}
-  - {fileID: 868084997}
-  _unlocked:
-  - {fileID: 42168778}
-  - {fileID: 1059128336}
-  - {fileID: 185168270}
-  - {fileID: 1383794850}
-  _button:
-  - {fileID: 642315243}
-  - {fileID: 1969227632}
-  - {fileID: 420679681}
-  - {fileID: 1011848857}
-  _costText:
-  - {fileID: 1186071577}
-  - {fileID: 898227435}
-  - {fileID: 1541497483}
-  - {fileID: 1864235658}
-  _cost: 64000000c80000002c01000090010000
+  _lockOptions:
+  - ElementName: Floor 2
+    Locked: {fileID: 1834732232}
+    Unlocked: {fileID: 42168778}
+    Button: {fileID: 642315243}
+    CostText: {fileID: 1186071577}
+    Cost: 100
+  - ElementName: Floor 3
+    Locked: {fileID: 372271197}
+    Unlocked: {fileID: 1059128336}
+    Button: {fileID: 1969227632}
+    CostText: {fileID: 898227435}
+    Cost: 200
+  - ElementName: Floor 4
+    Locked: {fileID: 518417595}
+    Unlocked: {fileID: 185168270}
+    Button: {fileID: 420679681}
+    CostText: {fileID: 1541497483}
+    Cost: 300
+  - ElementName: Floor 5
+    Locked: {fileID: 868084997}
+    Unlocked: {fileID: 1383794850}
+    Button: {fileID: 1011848857}
+    CostText: {fileID: 1864235658}
+    Cost: 400
 --- !u!114 &505910938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5162,7 +5166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1131057543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6526,7 +6530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1266650307
 MonoBehaviour:
   m_ObjectHideFlags: 0

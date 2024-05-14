@@ -13,11 +13,7 @@ public class FloorsChanging : MonoBehaviour
     private int _floorsIndex = 0;
 
     #region LockSystem
-    [SerializeField] private GameObject[] _locked;
-    [SerializeField] private GameObject[] _unlocked;
-    [SerializeField] private Button[] _button;
-    [SerializeField] private TextMeshProUGUI[] _costText;
-    [SerializeField] private int[] _cost;
+    public LockSystem[] _lockOptions;
 
     private bool _isLocked2 = true;
     private bool _isLocked3 = true;
@@ -27,15 +23,15 @@ public class FloorsChanging : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 1; i < _locked.Length; i++)
+        for (int i = 1; i < _lockOptions.Length; i++)
         {
-            _costText[i].text = $"{_cost[i]}$";
+            _lockOptions[i].CostText.text = $"{_lockOptions[i].Cost}$";
         }
 
-        _button[0].onClick.AddListener(Locked2);
-        _button[1].onClick.AddListener(Locked3);
-        _button[2].onClick.AddListener(Locked4);
-        _button[3].onClick.AddListener(Locked5);
+        _lockOptions[0].Button.onClick.AddListener(Locked2);
+        _lockOptions[1].Button.onClick.AddListener(Locked3);
+        _lockOptions[2].Button.onClick.AddListener(Locked4);
+        _lockOptions[3].Button.onClick.AddListener(Locked5);
     }
     private void Update()
     {
@@ -57,7 +53,7 @@ public class FloorsChanging : MonoBehaviour
         _floorsIndex--;
         _floors[_floorsIndex].SetActive(true);
         FloorsText(_floorsIndex);
-        CheckLock(_floorsIndex);
+        CheckLock(_floorsIndex - 1);
     }
     private void FloorsText(int index)
     {
@@ -87,89 +83,89 @@ public class FloorsChanging : MonoBehaviour
             case 0:
                 if (_isLocked2 == true)
                 {
-                    _unlocked[index].SetActive(false);
-                    _locked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(false);
+                    _lockOptions[index].Locked.SetActive(true);
                 }
                 else
                 {
-                    _locked[index].SetActive(false);
-                    _unlocked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(true);
+                    _lockOptions[index].Locked.SetActive(false);
                 }
                 break;
             case 1:
                 if (_isLocked3 == true)
                 {
-                    _unlocked[index].SetActive(false);
-                    _locked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(false);
+                    _lockOptions[index].Locked.SetActive(true);
                 }
                 else
                 {
-                    _locked[index].SetActive(false);
-                    _unlocked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(true);
+                    _lockOptions[index].Locked.SetActive(false);
                 }
                 break;
             case 2:
                 if (_isLocked4 == true)
                 {
-                    _unlocked[index].SetActive(false);
-                    _locked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(false);
+                    _lockOptions[index].Locked.SetActive(true);
                 }
                 else
                 {
-                    _locked[index].SetActive(false);
-                    _unlocked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(true);
+                    _lockOptions[index].Locked.SetActive(false);
                 }
                 break;
             case 3:
                 if (_isLocked5 == true)
                 {
-                    _unlocked[index].SetActive(false);
-                    _locked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(false);
+                    _lockOptions[index].Locked.SetActive(true);
                 }
                 else
                 {
-                    _locked[index].SetActive(false);
-                    _unlocked[index].SetActive(true);
+                    _lockOptions[index].Unlocked.SetActive(true);
+                    _lockOptions[index].Locked.SetActive(false);
                 }
                 break;
         }
     }
     private void Locked2()
     {
-        if (_resourceBank.Money < _cost[0]) return;
-        else if (_resourceBank.Money >= _cost[0])
+        if (_resourceBank.Money < _lockOptions[0].Cost) return;
+        else if (_resourceBank.Money >= _lockOptions[0].Cost)
         {
-            _resourceBank.Money -= _cost[0];
+            _resourceBank.Money -= _lockOptions[0].Cost;
             _isLocked2 = false;
             CheckLock(_floorsIndex - 1);
         }
     }
     private void Locked3() 
     {
-        if (_resourceBank.Money < _cost[1]) return;
-        else if (_resourceBank.Money >= _cost[1])
+        if (_resourceBank.Money < _lockOptions[1].Cost) return;
+        else if (_resourceBank.Money >= _lockOptions[1].Cost)
         {
-            _resourceBank.Money -= _cost[1];
+            _resourceBank.Money -= _lockOptions[1].Cost;
             _isLocked3 = false;
             CheckLock(_floorsIndex - 1);
         }
     }
     private void Locked4() 
     {
-        if (_resourceBank.Money < _cost[2]) return;
-        else if (_resourceBank.Money >= _cost[2])
+        if (_resourceBank.Money < _lockOptions[2].Cost) return;
+        else if (_resourceBank.Money >= _lockOptions[2].Cost)
         {
-            _resourceBank.Money -= _cost[2];
+            _resourceBank.Money -= _lockOptions[2].Cost;
             _isLocked4 = false;
             CheckLock(_floorsIndex - 1);
         }
     }
     private void Locked5() 
     {
-        if (_resourceBank.Money < _cost[3]) return;
-        else if (_resourceBank.Money >= _cost[3])
+        if (_resourceBank.Money < _lockOptions[3].Cost) return;
+        else if (_resourceBank.Money >= _lockOptions[3].Cost)
         {
-            _resourceBank.Money -= _cost[3];
+            _resourceBank.Money -= _lockOptions[3].Cost;
             _isLocked5 = false;
             CheckLock(_floorsIndex - 1);
         }
