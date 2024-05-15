@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
+    [SerializeField] private LevelLoader _levelLoader;
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        _levelLoader.LoadLevel(1);
     }
     public void ExitGame()
     {
