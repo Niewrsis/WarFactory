@@ -8,6 +8,7 @@ public class LevelLoader : MonoBehaviour
     private float _transitionTime = 1f;
     public IEnumerator LoadLevel(int index)
     {
+        Debug.Log("1234");
         _transition.SetTrigger("Start");
         yield return new WaitForSeconds(_transitionTime);
         SceneManager.LoadScene(index);
