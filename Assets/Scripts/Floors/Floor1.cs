@@ -38,9 +38,9 @@ public class Floor1 : MonoBehaviour
     {
         if (_money >= _upgradeCost)
         {
-            _resourceBank.Money -= _upgradeCost;
+            _resourceBank.Money -= (int)_upgradeCost;
             _upgradeCost += _upgradeCost * _upgradePercent;
-            _costText.text = $"{Math.Round(_upgradeCost, 1)}$";
+            _costText.text = $"{Mathf.RoundToInt(_upgradeCost)}$";
             _clickPower += 1;
             _clickPowerText.text = $"{_clickPower}$";
         }
