@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FloorsChanging : MonoBehaviour
 {
@@ -81,52 +78,20 @@ public class FloorsChanging : MonoBehaviour
         switch (index)
         {
             case 0:
-                if (_isLocked2 == true)
-                {
-                    _lockOptions[index].Unlocked.SetActive(false);
-                    _lockOptions[index].Locked.SetActive(true);
-                }
-                else
-                {
-                    _lockOptions[index].Unlocked.SetActive(true);
-                    _lockOptions[index].Locked.SetActive(false);
-                }
+                 _lockOptions[index].Unlocked.SetActive(_isLocked2 != true);
+                 _lockOptions[index].Locked.SetActive(_isLocked2 == true);
                 break;
             case 1:
-                if (_isLocked3 == true)
-                {
-                    _lockOptions[index].Unlocked.SetActive(false);
-                    _lockOptions[index].Locked.SetActive(true);
-                }
-                else
-                {
-                    _lockOptions[index].Unlocked.SetActive(true);
-                    _lockOptions[index].Locked.SetActive(false);
-                }
+                 _lockOptions[index].Unlocked.SetActive(_isLocked3 != true);
+                 _lockOptions[index].Locked.SetActive(_isLocked3 == true);
                 break;
             case 2:
-                if (_isLocked4 == true)
-                {
-                    _lockOptions[index].Unlocked.SetActive(false);
-                    _lockOptions[index].Locked.SetActive(true);
-                }
-                else
-                {
-                    _lockOptions[index].Unlocked.SetActive(true);
-                    _lockOptions[index].Locked.SetActive(false);
-                }
+                 _lockOptions[index].Unlocked.SetActive(_isLocked4 != true);
+                 _lockOptions[index].Locked.SetActive(_isLocked4 == true);
                 break;
             case 3:
-                if (_isLocked5 == true)
-                {
-                    _lockOptions[index].Unlocked.SetActive(false);
-                    _lockOptions[index].Locked.SetActive(true);
-                }
-                else
-                {
-                    _lockOptions[index].Unlocked.SetActive(true);
-                    _lockOptions[index].Locked.SetActive(false);
-                }
+                 _lockOptions[index].Unlocked.SetActive(_isLocked5 != true);
+                 _lockOptions[index].Locked.SetActive(_isLocked5 == true);
                 break;
         }
     }
@@ -170,8 +135,5 @@ public class FloorsChanging : MonoBehaviour
             CheckLock(_floorsIndex - 1);
         }
     }
-    public void Initialize(ResourceBank resourceBank)
-    {
-        _resourceBank = resourceBank;
-    }
+    public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

@@ -118,8 +118,5 @@ public class Floor2 : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-    public void Initialize(ResourceBank resourceBank)
-    {
-        _resourceBank = resourceBank;
-    }
+    public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

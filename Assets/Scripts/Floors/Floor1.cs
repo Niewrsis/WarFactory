@@ -7,16 +7,21 @@ public class Floor1 : MonoBehaviour
 {
     private ResourceBank _resourceBank;
 
+    #region Referenses
     [SerializeField] private Button _clickButton;
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private TextMeshProUGUI _clickPowerText;
+    #endregion
 
     private float _money;
     private int _multiplier;
+
+    #region Settings
     [SerializeField] private float _clickPower = 1;
     [SerializeField] private float _upgradeCost = 10;
     [SerializeField] private float _upgradePercent = .2f;
+    #endregion
 
     private void Start()
     {
@@ -30,10 +35,7 @@ public class Floor1 : MonoBehaviour
         _money = _resourceBank.Money;
         _multiplier = _resourceBank.Multiplier;
     }
-    private void Clicked()
-    {
-        _resourceBank.Money += _clickPower * _multiplier;
-    }
+    private void Clicked() => _resourceBank.Money += _clickPower * _multiplier;
     private void Upgrade()
     {
         if (_money >= _upgradeCost)
@@ -45,8 +47,5 @@ public class Floor1 : MonoBehaviour
             _clickPowerText.text = $"{_clickPower}$";
         }
     }
-    public void Initialize(ResourceBank resourceBank)
-    {
-        _resourceBank = resourceBank;
-    }
+    public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

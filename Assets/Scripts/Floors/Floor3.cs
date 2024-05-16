@@ -56,7 +56,6 @@ public class Floor3 : MonoBehaviour
     private void Clicked()
     {
         if (_isActive) return;
-
         StartCoroutine(ClickedCor());
     }
     IEnumerator ClickedCor()
@@ -118,8 +117,5 @@ public class Floor3 : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-    public void Initialize(ResourceBank resourceBank)
-    {
-        _resourceBank = resourceBank;
-    }
+    public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }
