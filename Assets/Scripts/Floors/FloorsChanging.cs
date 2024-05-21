@@ -10,7 +10,7 @@ public class FloorsChanging : MonoBehaviour
     private int _floorsIndex = 0;
 
     #region LockSystem
-    public LockSystem[] _lockOptions;
+    [SerializeField] private LockSystem[] _lockOptions;
 
     private bool _isLocked2 = true;
     private bool _isLocked3 = true;
@@ -98,6 +98,7 @@ public class FloorsChanging : MonoBehaviour
     private void Locked2()
     {
         if (_resourceBank.Money < _lockOptions[0].Cost) return;
+
         else if (_resourceBank.Money >= _lockOptions[0].Cost)
         {
             _resourceBank.Money -= _lockOptions[0].Cost;
