@@ -7,6 +7,8 @@ public class SetActiveStart : MonoBehaviour
     [SerializeField] private GameObject _thirdFloor;
     [SerializeField] private GameObject _fourthFloor;
     [SerializeField] private GameObject _fifthFloor;
+
+    [SerializeField] private GameObject[] _settings;
     private void Start()
     {
         _firstFloor.SetActive(true);
@@ -14,5 +16,7 @@ public class SetActiveStart : MonoBehaviour
         _thirdFloor.SetActive(false);
         _fourthFloor.SetActive(false);
         _fifthFloor.SetActive(false);
+
+        for (int i = 0;  i < _settings.Length; i++) _settings[i].SetActive(false);
     }
 }
