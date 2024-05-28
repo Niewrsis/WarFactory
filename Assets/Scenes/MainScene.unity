@@ -1293,6 +1293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228101182}
   - component: {fileID: 228101181}
+  - component: {fileID: 228101183}
   m_Layer: 0
   m_Name: Core Object
   m_TagString: Untagged
@@ -1319,6 +1320,7 @@ MonoBehaviour:
   _floor5: {fileID: 505910941}
   _floorSystem: {fileID: 505910937}
   _moneyView: {fileID: 352117523}
+  _rebirthScript: {fileID: 0}
 --- !u!4 &228101182
 Transform:
   m_ObjectHideFlags: 0
@@ -1334,6 +1336,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228101183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228101180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2f6b1f812f2ed4b89783262ff90255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _costText: {fileID: 0}
+  _multiplierText: {fileID: 0}
+  _cost: 0
 --- !u!1 &228909089
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,9 +31,6 @@ public class RebirthScript : MonoBehaviour
         _resourceBank.Money = 0;
         OnRebirth?.Invoke();
     }
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("Multiplier", 1);
-    }
+    private void OnApplicationQuit() => PlayerPrefs.SetInt("Multiplier", 1);
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }
