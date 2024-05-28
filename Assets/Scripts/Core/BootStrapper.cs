@@ -10,10 +10,12 @@ namespace Core
         [SerializeField] private Floor5 _floor5;
         [SerializeField] private FloorsChanging _floorSystem;
         [SerializeField] private MoneyView _moneyView;
+        [SerializeField] private RebirthScript _rebirthScript;
 
         private void Awake()
         {
-            ResourceBank resourceBank = new ResourceBank(0, 1);
+            ResourceBank resourceBank = new ResourceBank(0);
+
             _floor1.Initialize(resourceBank);
             _floor2.Initialize(resourceBank);
             _floor3.Initialize(resourceBank);
@@ -21,6 +23,9 @@ namespace Core
             _floor5.Initialize(resourceBank);
             _floorSystem.Initialize(resourceBank);
             _moneyView.Initialize(resourceBank);
+            _rebirthScript.Initialize(resourceBank);
+
+            PlayerPrefs.SetInt("Multiplier", 1);
         }
     }
 }

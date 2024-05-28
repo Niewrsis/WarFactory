@@ -28,6 +28,15 @@ public class Floor3 : MonoBehaviour
     [SerializeField] private int _upgradeTimerPower = 1;
     #endregion
 
+    #region Saving
+    private float _clickPowerEXTRA;
+    private float _upgradePowerCostEXTRA;
+    private float _upgradeTimerCostEXTRA;
+    private float _upgradePowerPercentEXTRA;
+    private float _upgradeTimerPercentEXTRA;
+    private float _timerEXTRA;
+    #endregion
+
     private float _money;
     private int _multiplier;
     private float _timerExtra;
@@ -36,6 +45,17 @@ public class Floor3 : MonoBehaviour
 
     private void Start()
     {
+        _multiplier = PlayerPrefs.GetInt("Multiplier");
+
+        _clickPowerEXTRA = _clickPower;
+        _upgradePowerCostEXTRA = _upgradePowerCost;
+        _upgradeTimerCostEXTRA = _upgradeTimerCost;
+        _upgradePowerPercentEXTRA = _upgradePowerPercent;
+        _upgradeTimerPercentEXTRA = _upgradeTimerPercent;
+        _timerEXTRA = _timer;
+
+        RebirthScript.OnRebirth += Rebirth;
+
         _timerExtra = _timer;
 
         _clickPowerText.text = $"{_clickPower}$";
@@ -51,7 +71,7 @@ public class Floor3 : MonoBehaviour
     private void Update()
     {
         _money = _resourceBank.Money;
-        _multiplier = _resourceBank.Multiplier;
+        _multiplier = PlayerPrefs.GetInt("Multiplier");
     }
     private void Clicked()
     {
@@ -116,6 +136,18 @@ public class Floor3 : MonoBehaviour
             _resourceBank.Money += _clickPower * _multiplier;
             yield return new WaitForSeconds(1);
         }
+    }
+    private void Rebirth()
+    {
+        _clickPower = _clickPowerEXTRA;
+        _upgradePowerCost = _upgradePowerCostEXTRA;
+        _upgradeTimerCost = _upgradeTimerCostEXTRA;
+        _upgradePowerPercent = _upgradePowerPercentEXTRA;
+        _upgradeTimerPercent = _upgradeTimerPercentEXTRA;
+        _timerExtra = _timerEXTRA;
+        _isPasiveIncome = false;
+        _upgradeTimerButton.enabled = true;
+        _clickButton.enabled = true;
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

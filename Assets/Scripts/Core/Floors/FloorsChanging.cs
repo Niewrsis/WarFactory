@@ -20,6 +20,8 @@ public class FloorsChanging : MonoBehaviour
 
     private void Start()
     {
+        RebirthScript.OnRebirth += Rebirth;
+
         for (int i = 1; i < _lockOptions.Length; i++)
         {
             _lockOptions[i].CostText.text = $"{_lockOptions[i].Cost}$";
@@ -135,6 +137,18 @@ public class FloorsChanging : MonoBehaviour
             _isLocked5 = false;
             CheckLock(_floorsIndex - 1);
         }
+    }
+    private void Rebirth()
+    {
+        _isLocked2 = true;
+        _isLocked3 = true;
+        _isLocked4 = true;
+        _isLocked5 = true;
+        _floorsIndex = 0;
+        FloorsText(_floorsIndex);
+        for (int i = 1; i < _floors.Length; i++)
+            _floors[i].SetActive(false);
+        _floors[0].SetActive(true);
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

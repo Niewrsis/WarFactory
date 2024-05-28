@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static RebirthScript;
 
 public class Floor1 : MonoBehaviour
 {
@@ -23,8 +24,22 @@ public class Floor1 : MonoBehaviour
     [SerializeField] private float _upgradePercent = .2f;
     #endregion
 
+    #region Saving
+    private float _clickPowerEXTRA;
+    private float _upgradeCostEXTRA;
+    private float _upgradePercentEXTRA;
+    #endregion
+
+    private void Awake()
+    {
+        _clickPowerEXTRA = _clickPower;
+        _upgradeCostEXTRA = _upgradeCost;
+        _upgradePercentEXTRA = _upgradePercent;
+    }
     private void Start()
     {
+        RebirthScript.OnRebirth += Rebirth;
+
         _clickPowerText.text = $"{_clickPower}$";
         _costText.text = $"{Math.Round(_upgradeCost, 1)}$";
         _clickButton.onClick.AddListener(Clicked);
@@ -33,7 +48,7 @@ public class Floor1 : MonoBehaviour
     private void Update()
     {
         _money = _resourceBank.Money;
-        _multiplier = _resourceBank.Multiplier;
+        _multiplier = PlayerPrefs.GetInt("Multiplier");
     }
     private void Clicked() => _resourceBank.Money += _clickPower * _multiplier;
     private void Upgrade()
@@ -46,6 +61,16 @@ public class Floor1 : MonoBehaviour
             _clickPower += 1;
             _clickPowerText.text = $"{_clickPower}$";
         }
+    }
+
+    private void Rebirth()
+    {
+        _clickPower = _clickPowerEXTRA;
+        _upgradeCost = _upgradeCostEXTRA;
+        _upgradePercent = _upgradePercentEXTRA;
+
+        _costText.text = $"{Mathf.RoundToInt(_upgradeCost)}$";
+        _clickPowerText.text = $"{_clickPower}$";
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }
