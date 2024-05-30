@@ -121,8 +121,8 @@ public class Floor2 : MonoBehaviour
             _timerExtra = _timer;
             if (_timer <= 1)
             {
-                StartCoroutine(PassiveIncome());
                 _isPasiveIncome = true;
+                StartCoroutine(PassiveIncome());
                 _costTimerText.text = "";
                 _timerText.SetActive(true);
                 _timerText.GetComponent<TextMeshProUGUI>().text = $"Auto";
