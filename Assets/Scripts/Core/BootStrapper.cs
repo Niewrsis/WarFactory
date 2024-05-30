@@ -11,7 +11,6 @@ namespace Core
         [SerializeField] private FloorsChanging _floorSystem;
         [SerializeField] private MoneyView _moneyView;
         [SerializeField] private RebirthScript _rebirthScript;
-        [SerializeField] private AchievementsSystem _achievementsSystem;
 
         private void Awake()
         {
@@ -25,7 +24,6 @@ namespace Core
             _floorSystem.Initialize(resourceBank);
             _moneyView.Initialize(resourceBank);
             _rebirthScript.Initialize(resourceBank);
-            _achievementsSystem.Initialize(resourceBank);
 
             PlayerPrefs.SetInt("Multiplier", 1);
         }
