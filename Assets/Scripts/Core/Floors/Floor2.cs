@@ -109,6 +109,7 @@ public class Floor2 : MonoBehaviour
     }
     private void UpgradeTimer()
     {
+        if (_isActive) return;
         if (_isPasiveIncome == true) return;
 
         if (_money >= _upgradeTimerCost)
