@@ -14700,7 +14700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103069fcff8233045ac61e0e20f26a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicVolume: 0
+  _musicVolume: 100
+  _volumeSlider: {fileID: 1852019413}
+  _volumePercentText: {fileID: 1026604434}
 --- !u!4 &1960421961
 Transform:
   m_ObjectHideFlags: 0
