@@ -8,7 +8,6 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject[] _tutorialScrens;
     [SerializeField] private GameObject _arrowToRight;
     [SerializeField] private GameObject _arrowToLeft;
-    [SerializeField] private GameObject _closeButton;
     private int _index = 0;
 
     private void Awake()
@@ -19,7 +18,6 @@ public class Tutorial : MonoBehaviour
 
         _arrowToLeft.SetActive(false);
         _arrowToRight.SetActive(true);
-        _closeButton.SetActive(false);
     }
     private void Start()
     {
@@ -31,7 +29,6 @@ public class Tutorial : MonoBehaviour
         if (_index == _tutorialScrens.Length - 1)
         {
             _arrowToRight.SetActive(false);
-            _closeButton.SetActive(true);
             return;
         }
         _index++;
