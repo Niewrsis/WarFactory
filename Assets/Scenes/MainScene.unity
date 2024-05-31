@@ -1405,8 +1405,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1560,7 +1560,7 @@ MonoBehaviour:
   _button: {fileID: 1803222252}
   _costText: {fileID: 224469691}
   _multiplierText: {fileID: 1926080811}
-  _cost: 2000
+  _cost: 100000
 --- !u!1 &228909089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,10 +2698,10 @@ RectTransform:
   - {fileID: 682404700}
   m_Father: {fileID: 900888496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 439.54504, y: -896.125}
+  m_SizeDelta: {x: 879.0901, y: 245.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359456752
 MonoBehaviour:
@@ -3124,10 +3124,10 @@ RectTransform:
   - {fileID: 1797097365}
   m_Father: {fileID: 900888496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 439.54504, y: -638.375}
+  m_SizeDelta: {x: 879.0901, y: 245.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419280568
 MonoBehaviour:
@@ -3528,30 +3528,30 @@ MonoBehaviour:
   - {fileID: 1131057542}
   _floorsText: {fileID: 16755996}
   _lockOptions:
-  - ElementName: Floor 2
+  - Name: Floor 2
     Locked: {fileID: 1834732232}
     Unlocked: {fileID: 42168778}
     Button: {fileID: 642315243}
     CostText: {fileID: 1186071577}
-    Cost: 100
-  - ElementName: Floor 3
+    Cost: 150
+  - Name: Floor 3
     Locked: {fileID: 372271197}
     Unlocked: {fileID: 1059128336}
     Button: {fileID: 1969227632}
     CostText: {fileID: 898227435}
-    Cost: 200
-  - ElementName: Floor 4
+    Cost: 600
+  - Name: Floor 4
     Locked: {fileID: 518417595}
     Unlocked: {fileID: 185168270}
     Button: {fileID: 420679681}
     CostText: {fileID: 1541497483}
-    Cost: 300
-  - ElementName: Floor 5
+    Cost: 2000
+  - Name: Floor 5
     Locked: {fileID: 868084997}
     Unlocked: {fileID: 1383794850}
     Button: {fileID: 1011848857}
     CostText: {fileID: 1864235658}
-    Cost: 400
+    Cost: 15000
 --- !u!114 &505910938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3572,13 +3572,13 @@ MonoBehaviour:
   _clickPowerText: {fileID: 361452281}
   _timerText: {fileID: 335573011}
   _fillBar: {fileID: 552822248}
-  _clickPower: 5
+  _clickPower: 25
   _upgradePowerCost: 30
-  _upgradeTimerCost: 10
-  _upgradePowerPercent: 0.2
-  _upgradeTimerPercent: 0.5
-  _timer: 6
-  _upgradePowerPower: 1
+  _upgradeTimerCost: 70
+  _upgradePowerPercent: 0.3
+  _upgradeTimerPercent: 0.6
+  _timer: 3
+  _upgradePowerPower: 5
   _upgradeTimerPower: 1
 --- !u!114 &505910939
 MonoBehaviour:
@@ -3600,13 +3600,13 @@ MonoBehaviour:
   _clickPowerText: {fileID: 228909092}
   _timerText: {fileID: 1092210077}
   _fillBar: {fileID: 1268767391}
-  _clickPower: 20
-  _upgradePowerCost: 50
-  _upgradeTimerCost: 40
-  _upgradePowerPercent: 0.4
-  _upgradeTimerPercent: 2
+  _clickPower: 200
+  _upgradePowerCost: 250
+  _upgradeTimerCost: 400
+  _upgradePowerPercent: 0.3
+  _upgradeTimerPercent: 0.6
   _timer: 6
-  _upgradePowerPower: 1
+  _upgradePowerPower: 100
   _upgradeTimerPower: 1
 --- !u!114 &505910940
 MonoBehaviour:
@@ -3628,13 +3628,13 @@ MonoBehaviour:
   _clickPowerText: {fileID: 1247199457}
   _timerText: {fileID: 1330630610}
   _fillBar: {fileID: 1163698193}
-  _clickPower: 30
-  _upgradePowerCost: 70
-  _upgradeTimerCost: 50
-  _upgradePowerPercent: 0.4
-  _upgradeTimerPercent: 2
-  _timer: 6
-  _upgradePowerPower: 1
+  _clickPower: 3000
+  _upgradePowerCost: 1500
+  _upgradeTimerCost: 3000
+  _upgradePowerPercent: 0.3
+  _upgradeTimerPercent: 0.6
+  _timer: 10
+  _upgradePowerPower: 500
   _upgradeTimerPower: 1
 --- !u!114 &505910941
 MonoBehaviour:
@@ -3656,13 +3656,13 @@ MonoBehaviour:
   _clickPowerText: {fileID: 1354357062}
   _timerText: {fileID: 1891316290}
   _fillBar: {fileID: 1240826224}
-  _clickPower: 50
-  _upgradePowerCost: 100
-  _upgradeTimerCost: 60
-  _upgradePowerPercent: 0.4
-  _upgradeTimerPercent: 2
-  _timer: 6
-  _upgradePowerPower: 1
+  _clickPower: 15000
+  _upgradePowerCost: 7500
+  _upgradeTimerCost: 10000
+  _upgradePowerPercent: 0.3
+  _upgradeTimerPercent: 0.6
+  _timer: 15
+  _upgradePowerPower: 5000
   _upgradeTimerPower: 1
 --- !u!1 &514058149
 GameObject:
@@ -5193,8 +5193,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5573,10 +5573,10 @@ RectTransform:
   - {fileID: 1077932566}
   m_Father: {fileID: 900888496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 439.54504, y: -122.875}
+  m_SizeDelta: {x: 879.0901, y: 245.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897758372
 MonoBehaviour:
@@ -5701,7 +5701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &900888496
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7328,7 +7328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1131057543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8026,10 +8026,10 @@ RectTransform:
   - {fileID: 1360667993}
   m_Father: {fileID: 900888496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 439.54504, y: -380.625}
+  m_SizeDelta: {x: 879.0901, y: 245.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201269847
 MonoBehaviour:
@@ -8837,7 +8837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1266650307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13410,8 +13410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 446.491, y: 25.332}
-  m_SizeDelta: {x: 277.669, y: 256.23}
+  m_AnchoredPosition: {x: -621, y: 41.43}
+  m_SizeDelta: {x: 597.411, y: 224.041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803222250
 MonoBehaviour:
@@ -13433,7 +13433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 879eb3196bae02649b9360b472267f9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e960961fb122ebf4fabd5478ff027276, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

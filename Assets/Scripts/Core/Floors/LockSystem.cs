@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class LockSystem
 {
-    public string ElementName;
+    public string Name;
     public GameObject Locked, Unlocked;
     public Button Button;
     public TextMeshProUGUI CostText;

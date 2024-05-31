@@ -58,11 +58,11 @@ public class Floor4 : MonoBehaviour
 
         _timerExtra = _timer;
 
-        _clickPowerText.text = $"{_clickPower}$";
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
         _timerText.SetActive(false);
 
-        _costPowerText.text = $"{Mathf.RoundToInt(_upgradePowerCost)}$";
-        _costTimerText.text = $"{Mathf.RoundToInt(_upgradeTimerCost)}$";
+        _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
+        _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
 
         _clickButton.onClick.AddListener(Clicked);
         _upgradePowerButton.onClick.AddListener(UpgradePower);
@@ -86,7 +86,7 @@ public class Floor4 : MonoBehaviour
         for (float i = _timer; i > 0; i--)
         {
             _timer--;
-            _timerText.GetComponent<TextMeshProUGUI>().text = $"{Mathf.RoundToInt(i)} sec.";
+            _timerText.GetComponent<TextMeshProUGUI>().text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(i))} sec.";
             yield return new WaitForSeconds(1);
             _fillBar.fillAmount -= 1 / _timerExtra;
         }
@@ -102,9 +102,9 @@ public class Floor4 : MonoBehaviour
         {
             _resourceBank.Money -= _upgradePowerCost;
             _upgradePowerCost += _upgradePowerCost * _upgradePowerPercent;
-            _costPowerText.text = $"{Mathf.RoundToInt(_upgradePowerCost)}$";
+            _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
             _clickPower += _upgradePowerPower;
-            _clickPowerText.text = $"{_clickPower}$";
+            _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
         }
     }
     private void UpgradeTimer()
@@ -116,7 +116,7 @@ public class Floor4 : MonoBehaviour
         {
             _resourceBank.Money -= _upgradeTimerCost;
             _upgradeTimerCost += _upgradeTimerCost * _upgradeTimerPercent;
-            _costTimerText.text = $"{Mathf.RoundToInt(_upgradeTimerCost)}$";
+            _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
             _timer -= _upgradeTimerPower;
             _timerExtra = _timer;
             if (_timer <= 1)
@@ -151,6 +151,10 @@ public class Floor4 : MonoBehaviour
         _isPasiveIncome = false;
         _upgradeTimerButton.enabled = true;
         _clickButton.enabled = true;
+
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
+        _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
+        _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

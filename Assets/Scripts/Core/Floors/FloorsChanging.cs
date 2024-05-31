@@ -24,7 +24,7 @@ public class FloorsChanging : MonoBehaviour
 
         for (int i = 1; i < _lockOptions.Length; i++)
         {
-            _lockOptions[i].CostText.text = $"{_lockOptions[i].Cost}$";
+            _lockOptions[i].CostText.text = $"{Formatter.FormatNumberToString(_lockOptions[i].Cost)}$";
         }
 
         _lockOptions[0].Button.onClick.AddListener(Locked2);
@@ -144,11 +144,17 @@ public class FloorsChanging : MonoBehaviour
         _isLocked3 = true;
         _isLocked4 = true;
         _isLocked5 = true;
+
         _floorsIndex = 0;
         FloorsText(_floorsIndex);
+
         for (int i = 1; i < _floors.Length; i++)
             _floors[i].SetActive(false);
+
         _floors[0].SetActive(true);
+
+        for (int i = 1; i < _lockOptions.Length; i++)
+            _lockOptions[i].CostText.text = $"{Formatter.FormatNumberToString(_lockOptions[i].Cost)}$";
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

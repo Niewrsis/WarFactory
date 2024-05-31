@@ -26,6 +26,7 @@ public class RebirthScript : MonoBehaviour
         if (_resourceBank.Money < _cost) return;
         _multiplier++;
         PlayerPrefs.SetInt("Multiplier", _multiplier);
+        _cost *= 10;
         _costText.text = $"{_cost}$";
         _multiplierText.text = $"x{_multiplier}";
         _resourceBank.Money = 0;

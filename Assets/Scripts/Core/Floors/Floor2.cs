@@ -18,13 +18,13 @@ public class Floor2 : MonoBehaviour
     #endregion
 
     #region Settings
-    [SerializeField] private float _clickPower = 1;
-    [SerializeField] private float _upgradePowerCost = 10;
-    [SerializeField] private float _upgradeTimerCost = 10;
-    [SerializeField] private float _upgradePowerPercent = .2f;
-    [SerializeField] private float _upgradeTimerPercent = .2f;
-    [SerializeField] private float _timer = 5;
-    [SerializeField] private int _upgradePowerPower = 1;
+    [SerializeField] private float _clickPower = 25;
+    [SerializeField] private float _upgradePowerCost = 30;
+    [SerializeField] private float _upgradeTimerCost = 70;
+    [SerializeField] private float _upgradePowerPercent = .3f;
+    [SerializeField] private float _upgradeTimerPercent = .6f;
+    [SerializeField] private float _timer = 3;
+    [SerializeField] private int _upgradePowerPower = 5;
     [SerializeField] private int _upgradeTimerPower = 1;
     #endregion
 
@@ -58,11 +58,11 @@ public class Floor2 : MonoBehaviour
 
         _timerExtra = _timer;
 
-        _clickPowerText.text = $"{_clickPower}$";
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
         _timerText.SetActive(false);
 
-        _costPowerText.text = $"{Mathf.RoundToInt(_upgradePowerCost)}$";
-        _costTimerText.text = $"{Mathf.RoundToInt(_upgradeTimerCost)}$";
+        _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
+        _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
 
         _clickButton.onClick.AddListener(Clicked);
         _upgradePowerButton.onClick.AddListener(UpgradePower);
@@ -86,7 +86,7 @@ public class Floor2 : MonoBehaviour
         for (float i = _timer; i > 0; i--)
         {
             _timer--;
-            _timerText.GetComponent<TextMeshProUGUI>().text = $"{Mathf.RoundToInt(i)} sec.";
+            _timerText.GetComponent<TextMeshProUGUI>().text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(i))} sec.";
             yield return new WaitForSeconds(1);
             _fillBar.fillAmount -= 1 / _timerExtra;
         }
@@ -102,9 +102,9 @@ public class Floor2 : MonoBehaviour
         {
             _resourceBank.Money -= _upgradePowerCost;
             _upgradePowerCost += _upgradePowerCost * _upgradePowerPercent;
-            _costPowerText.text = $"{Mathf.RoundToInt(_upgradePowerCost)}$";
+            _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
             _clickPower += _upgradePowerPower;
-            _clickPowerText.text = $"{_clickPower}$";
+            _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
         }
     }
     private void UpgradeTimer()
@@ -116,7 +116,7 @@ public class Floor2 : MonoBehaviour
         {
             _resourceBank.Money -= _upgradeTimerCost;
             _upgradeTimerCost += _upgradeTimerCost * _upgradeTimerPercent;
-            _costTimerText.text = $"{Mathf.RoundToInt(_upgradeTimerCost)}$";
+            _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
             _timer -= _upgradeTimerPower;
             _timerExtra = _timer;
             if (_timer <= 1)
@@ -142,6 +142,7 @@ public class Floor2 : MonoBehaviour
 
     private void Rebirth()
     {
+        StopCoroutine(PassiveIncome());
         _clickPower = _clickPowerEXTRA;
         _upgradePowerCost = _upgradePowerCostEXTRA;
         _upgradeTimerCost = _upgradeTimerCostEXTRA;
@@ -151,6 +152,10 @@ public class Floor2 : MonoBehaviour
         _isPasiveIncome = false;
         _upgradeTimerButton.enabled = true;
         _clickButton.enabled = true;
-    }    
+
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
+        _costTimerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeTimerCost))}$";
+        _costPowerText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradePowerCost))}$";
+    }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }

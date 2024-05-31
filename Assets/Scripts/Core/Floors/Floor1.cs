@@ -2,7 +2,6 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static RebirthScript;
 
 public class Floor1 : MonoBehaviour
 {
@@ -40,8 +39,8 @@ public class Floor1 : MonoBehaviour
     {
         RebirthScript.OnRebirth += Rebirth;
 
-        _clickPowerText.text = $"{_clickPower}$";
-        _costText.text = $"{Math.Round(_upgradeCost, 1)}$";
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
+        _costText.text = $"{Formatter.FormatNumberToString(Math.Round(_upgradeCost, 1))}$";
         _clickButton.onClick.AddListener(Clicked);
         _upgradeButton.onClick.AddListener(Upgrade);
     }
@@ -57,9 +56,9 @@ public class Floor1 : MonoBehaviour
         {
             _resourceBank.Money -= (int)_upgradeCost;
             _upgradeCost += _upgradeCost * _upgradePercent;
-            _costText.text = $"{Mathf.RoundToInt(_upgradeCost)}$";
+            _costText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeCost))}$";
             _clickPower += 1;
-            _clickPowerText.text = $"{_clickPower}$";
+            _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
         }
     }
 
@@ -69,8 +68,8 @@ public class Floor1 : MonoBehaviour
         _upgradeCost = _upgradeCostEXTRA;
         _upgradePercent = _upgradePercentEXTRA;
 
-        _costText.text = $"{Mathf.RoundToInt(_upgradeCost)}$";
-        _clickPowerText.text = $"{_clickPower}$";
+        _costText.text = $"{Formatter.FormatNumberToString(Mathf.RoundToInt(_upgradeCost))}$";
+        _clickPowerText.text = $"{Formatter.FormatNumberToString(_clickPower)}$";
     }
     public void Initialize(ResourceBank resourceBank) => _resourceBank = resourceBank;
 }
