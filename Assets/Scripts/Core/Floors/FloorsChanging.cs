@@ -22,10 +22,8 @@ public class FloorsChanging : MonoBehaviour
     {
         RebirthScript.OnRebirth += Rebirth;
 
-        for (int i = 1; i < _lockOptions.Length; i++)
-        {
+        for (int i = 1; i < _lockOptions.Length; i++) 
             _lockOptions[i].CostText.text = $"{Formatter.FormatNumberToString(_lockOptions[i].Cost)}$";
-        }
 
         _lockOptions[0].Button.onClick.AddListener(Locked2);
         _lockOptions[1].Button.onClick.AddListener(Locked3);

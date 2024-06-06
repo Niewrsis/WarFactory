@@ -5,7 +5,6 @@ public class StartScreen : MonoBehaviour
     [SerializeField] private LevelLoader _levelLoader;
     [SerializeField] private GameObject _options;
     [SerializeField] private GameObject _musicSettings;
-    //[SerializeField] private GameObject _tutorial;
     private void Start()
     {
         _options.SetActive(false);

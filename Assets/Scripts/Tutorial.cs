@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +10,8 @@ public class Tutorial : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < _tutorialScrens.Length; i++)
-            _tutorialScrens[i].SetActive(false);
+        for (int i = 0; i < _tutorialScrens.Length; i++) _tutorialScrens[i].SetActive(false);
+
         _tutorialScrens[0].SetActive(true);
 
         _arrowToLeft.SetActive(false);
@@ -31,8 +29,10 @@ public class Tutorial : MonoBehaviour
             _arrowToRight.SetActive(false);
             return;
         }
+
         _index++;
         CheckIndex(_index);
+
         if (_index == _tutorialScrens.Length - 1) _arrowToRight.SetActive(false);
         else _arrowToRight.SetActive(true);
 
@@ -43,6 +43,7 @@ public class Tutorial : MonoBehaviour
     {
         _index--;
         CheckIndex(_index);
+
         if (_index == _tutorialScrens.Length - 1) _arrowToRight.SetActive(false);
         else _arrowToRight.SetActive(true);
 
